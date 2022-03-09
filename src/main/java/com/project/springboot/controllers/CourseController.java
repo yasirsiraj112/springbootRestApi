@@ -13,16 +13,27 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    /// Create Get Mapping of school
-    @GetMapping(value = "/course", produces = MediaType.APPLICATION_JSON_VALUE)
-    public CourseDTO getCourseRecord(){
-       return courseService.getCourseRecord();
-    }
+	@PostMapping(value = "/course")
+	public CourseDTO saveEmployee(@RequestBody CourseDTO courseDTO){
+		try{
+			courseService.saveAll(courseDTO);
+			return courseDTO;
+		}catch (Exception e){
+			return null;
+		}
+	}
 
-    //// Path Variable
-    //http://localhost:1000/course/
-    @RequestMapping(value = "/course/{id}")
-    public String getCourseid(@PathVariable("id") int id, @RequestParam String name){
-        return "Get Course ID: " + id+" Get Course Name: " + name;
-    }
+    /// Create Get Mapping of school
+//    @GetMapping(value = "/course", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public CourseDTO getCourseRecord(){
+//       return courseService.getCourseRecord();
+//    }
+//
+//    //// Path Variable
+//    //http://localhost:1000/course/
+//    @RequestMapping(value = "/course/{id}")
+//    public String getCourseid(@PathVariable("id") int id, @RequestParam String name){
+//        return "Get Course ID: " + id+" Get Course Name: " + name;
+//    }
+
 }

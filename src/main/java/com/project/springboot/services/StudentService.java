@@ -5,6 +5,5 @@ import com.project.springboot.dtos.StudentDTO;
 ////// Create TeacherService Interface class
 public interface StudentService {
     // Create 2 functions
-    public StudentDTO getStudentRecord();
-    public StudentDTO createStudentRecord();
+	public void saveAll(StudentDTO studentDTO);
 }

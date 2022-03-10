@@ -4,6 +4,7 @@ import com.project.springboot.dtos.SchoolDTO;
 import com.project.springboot.services.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,10 +14,19 @@ public class SchoolController {
     @Autowired
     private SchoolService schoolService;
 
+	public SchoolDTO saveSchools(@RequestBody SchoolDTO schoolDTO){
+		try{
+			schoolService.saveAll(schoolDTO);
+			return schoolDTO;
+		}catch (Exception e){
+			return null;
+		}
+	}
+
     /// Create Get Mapping of school
-    @GetMapping(value = "/school")
-    public SchoolDTO getSchoolRecord(){
-       return schoolService.getSchoolRecord();
-    }
+//    @GetMapping(value = "/school")
+//    public SchoolDTO getSchoolRecord(){
+//       return schoolService.getSchoolRecord();
+//    }
 
 }

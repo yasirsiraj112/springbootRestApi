@@ -6,6 +6,8 @@ import com.project.springboot.repositories.SchoolRepository;
 import com.project.springboot.services.SchoolService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 /// implements StudentService class in current class
 /// Add Service Annotation to change this class to service
 @Service
@@ -14,6 +16,7 @@ public class SchoolServiceImpl implements SchoolService {
 
 	private SchoolRepository schoolRepository;
 
+	@Transactional
 	@Override
 	public void saveAll(SchoolDTO schoolDTO){
 		SchoolEntity schoolObj= new SchoolEntity();

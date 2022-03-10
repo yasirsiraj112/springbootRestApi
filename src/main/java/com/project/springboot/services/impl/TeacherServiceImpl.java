@@ -8,6 +8,7 @@ import com.project.springboot.services.TeacherService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
 /// Implements teacher service class in Implement class
@@ -27,11 +28,11 @@ public class TeacherServiceImpl implements TeacherService {
 //        return teacherObj;
 //    }
 
-	@Override
-	public TeacherDTO getTecherRecord() {
-		return null;
-	}
-
+//	@Override
+//	public TeacherDTO getTecherRecord() {
+//		return null;
+//	}
+	@Transactional
 	@Override
 	public void saveAll(TeacherDTO teacherDTO){
 		TeacherEntity thrObj=new TeacherEntity();

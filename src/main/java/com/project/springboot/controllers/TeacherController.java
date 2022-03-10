@@ -17,11 +17,11 @@ public class TeacherController {
     private TeacherService teacherService;
 
     /// Create Get Mapping of Teacher
-    @GetMapping(value = "/teacher", produces = MediaType.APPLICATION_JSON_VALUE)
-    public TeacherDTO getTeacherRecord(){
-        // Return Service Get Teacher Record Method which defined in Course Serivce Class
-        return teacherService.getTecherRecord();
-    }
+//    @GetMapping(value = "/teacher", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public TeacherDTO getTeacherRecord(){
+//        // Return Service Get Teacher Record Method which defined in Course Serivce Class
+//        return teacherService.getTecherRecord();
+//    }
 
 	@PostMapping(value = "/teacher")
 	public TeacherDTO saveAll(@RequestBody TeacherDTO teacherDTO){

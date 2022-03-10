@@ -19,19 +19,6 @@ public class TeacherServiceImpl implements TeacherService {
 	@Autowired
 	private TeacherRepository teacherRepository;
 
-    /// Create Object Using DTOS package dtos -> TeacherDTO
-//    @Override
-//    public TeacherDTO getTecherRecord() {
-//        TeacherDTO teacherObj=new TeacherDTO();
-//        teacherObj.settID("1");
-//        teacherObj.setTeacherName("Sir Ibrar");
-//        return teacherObj;
-//    }
-
-//	@Override
-//	public TeacherDTO getTecherRecord() {
-//		return null;
-//	}
 	@Transactional
 	@Override
 	public void saveAll(TeacherDTO teacherDTO){

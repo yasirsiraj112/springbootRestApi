@@ -28,27 +28,4 @@ public class StudenServiceImpl implements StudentService {
 		studentRepository.save(stdObj);
 	}
 
-
-
-    //private static HashSet<StudentDTO> studentDTOS;
-
-    // Implements all functions from studentService Class
-    /// Create Object Using DTOS package dtos -> StudentDTO
-//    @Override
-//    public StudentDTO getStudentRecord() {
-//        StudentDTO studentObject=new StudentDTO();
-//        studentObject.setsID("1");
-//        studentObject.setStudentName("Yasir");
-//        return studentObject;
-//    }
-//
-//    @Override
-//    public StudentDTO createStudentRecord() {
-//        StudentDTO studentObject=new StudentDTO();
-//        studentObject.setsID("1");
-//        studentObject.setStudentName("Yasir");
-//        return studentObject;
-//    }
-
-
 }

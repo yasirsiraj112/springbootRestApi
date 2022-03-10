@@ -24,13 +24,5 @@ public class CourseServiceImpl implements CourseService {
 		BeanUtils.copyProperties(courseDTO, courseObj);
 		courseRepository.save(courseObj);
 	}
-	/// Create Object Using DTOS package dtos -> CourseDTO
-//    @Override
-//    public CourseDTO getCourseRecord() {
-//        CourseDTO courseObj=new CourseDTO();
-//        courseObj.setcID("1");
-//        courseObj.setCourseName("Physics");
-//        return courseObj;
-//    }
 
 }

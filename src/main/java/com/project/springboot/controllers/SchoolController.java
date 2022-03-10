@@ -23,10 +23,5 @@ public class SchoolController {
 		}
 	}
 
-    /// Create Get Mapping of school
-//    @GetMapping(value = "/school")
-//    public SchoolDTO getSchoolRecord(){
-//       return schoolService.getSchoolRecord();
-//    }
 
 }

@@ -5,6 +5,7 @@ import com.project.springboot.models.SchoolEntity;
 import com.project.springboot.repositories.SchoolRepository;
 import com.project.springboot.services.SchoolService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,22 +15,15 @@ import org.springframework.transaction.annotation.Transactional;
 public class SchoolServiceImpl implements SchoolService {
     /// Create Object Using DTOS package dtos -> SchoolDTO
 
+	@Autowired
 	private SchoolRepository schoolRepository;
 
 	@Transactional
+
 	@Override
 	public void saveAll(SchoolDTO schoolDTO){
 		SchoolEntity schoolObj= new SchoolEntity();
 		BeanUtils.copyProperties(schoolDTO, schoolObj);
 		schoolRepository.save(schoolObj);
 	}
-
-
-//    @Override
-//    public SchoolDTO getSchoolRecord() {
-//        SchoolDTO schoolObj=new SchoolDTO();
-//        schoolObj.setSchoolID("1");
-//        schoolObj.setSchoolName("Laureate");
-//        return schoolObj;
-//    }
 }

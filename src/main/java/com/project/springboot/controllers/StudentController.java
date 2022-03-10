@@ -22,22 +22,4 @@ public class StudentController {
 			return null;
 		}
 	}
-//    /// Create Get Mapping of student
-//    @GetMapping(value = "/student", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public StudentDTO getStudent(){
-//       return studentService.getStudentRecord();
-//    }
-//
-//    /// Create Post Mapping of student
-//    @PostMapping(value = "/student", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public StudentDTO createStudent(){
-//        return studentService.createStudentRecord();
-//    }
-//
-//    ///////// Request Parameters
-//    ////// http://localhost:1000/student?id=1&name=Kashif
-//    @RequestMapping(value = "/student/")
-//    public String getStudentparam(@RequestParam int id, @RequestParam int name){
-//        return "Student ID: "+id+ " Student Name: "+name;
-//    }
 }

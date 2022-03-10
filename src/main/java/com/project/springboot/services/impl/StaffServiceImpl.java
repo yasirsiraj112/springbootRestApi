@@ -25,12 +25,5 @@ public class StaffServiceImpl implements StaffService {
 		staffRepository.save(staffObj);
 		return staffDTO;
 	}
-    /// Create Object Using DTOS package dtos -> StaffDTO
-//    @Override
-//    public StaffDTO getStaffRecord() {
-//        StaffDTO staffObj= new StaffDTO();
-//        staffObj.setStaffName("Kashif");
-//        return staffObj;
-//    }
 
 }

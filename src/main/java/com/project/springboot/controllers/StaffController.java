@@ -15,11 +15,6 @@ public class StaffController {
     @Autowired
     private StaffService staffService;
 
-    /// Create Get Mapping of staff
-//    @GetMapping(value ="/staff")
-//    public StaffDTO getStaffRecord(){
-//        return staffService.getStaffRecord();
-//    }
 	@PostMapping(value = "/staff")
 	public StaffDTO saveStaff(@RequestBody StaffDTO staffDTO){
 		try{

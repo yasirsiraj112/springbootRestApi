@@ -1,22 +1,27 @@
 package com.project.springboot.controllers;
 
 import com.project.springboot.dtos.TeacherDTO;
+import com.project.springboot.models.TeacherEntity;
 import com.project.springboot.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping(value = "/api/v1/teacher")
 public class TeacherController {
 
     /// Autowired TeacherService class not using JAVA Object method
     @Autowired
     private TeacherService teacherService;
 
-	@PostMapping(value = "/teacher")
+	@GetMapping
+	public List<TeacherEntity> getAll(){
+		return teacherService.findAll();
+	}
+
+	@PostMapping
 	public TeacherDTO saveAll(@RequestBody TeacherDTO teacherDTO){
 		try{
 			teacherService.saveAll(teacherDTO);

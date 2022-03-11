@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 /// Implements teacher service class in Implement class
 @Service
 public class TeacherServiceImpl implements TeacherService {
@@ -18,6 +20,11 @@ public class TeacherServiceImpl implements TeacherService {
 	/// Repository
 	@Autowired
 	private TeacherRepository teacherRepository;
+
+	@Override
+	public List<TeacherEntity> findAll(){
+		return teacherRepository.findAll();
+	}
 
 	@Transactional
 	@Override

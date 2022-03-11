@@ -1,21 +1,27 @@
 package com.project.springboot.controllers;
 
 import com.project.springboot.dtos.StaffDTO;
+import com.project.springboot.models.StaffEntity;
 import com.project.springboot.services.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping(value = "api/v1/staff")
 public class StaffController {
 
     /// Autowired TeacherService class not using JAVA Object method
     @Autowired
     private StaffService staffService;
 
-	@PostMapping(value = "/staff")
+	@GetMapping
+	public List<StaffEntity> getAll(){
+		return staffService.findAll();
+	}
+
+	@PostMapping
 	public StaffDTO saveStaff(@RequestBody StaffDTO staffDTO){
 		try{
 			staffService.saveAll(staffDTO);

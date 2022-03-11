@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /// implements StudentService class in current class
 /// Add Service Annotation to change this class to service
 @Service
@@ -18,8 +20,12 @@ public class SchoolServiceImpl implements SchoolService {
 	@Autowired
 	private SchoolRepository schoolRepository;
 
-	@Transactional
+	@Override
+	public List<SchoolEntity> findAll(){
+		return schoolRepository.findAll();
+	}
 
+	@Transactional
 	@Override
 	public void saveAll(SchoolDTO schoolDTO){
 		SchoolEntity schoolObj= new SchoolEntity();
